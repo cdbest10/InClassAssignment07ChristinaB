@@ -29,6 +29,9 @@ public class SecondActivity extends AppCompatActivity {
         moreInfo = (EditText) findViewById(R.id.more_info_view);
         hasFur = (CheckBox) findViewById(R.id.has_fur_view);
 
+    }
+
+    public void submitAnimal(View view) {
         String nameText = name.getEditableText().toString();
         String legsText = legs.getEditableText().toString();
         String moreInfoText = moreInfo.getEditableText().toString();
@@ -36,12 +39,9 @@ public class SecondActivity extends AppCompatActivity {
 
 
         Animal animal = new Animal(nameText, legsText, moreInfoText, fur);
-    }
 
-
-    public void submitAnimal(View view) {
         Intent addAnimal = new Intent(this, MainActivity.class);
-        addAnimal.putExtra(Keys.ANIMAL, addAnimal);
+        addAnimal.putExtra(Keys.ANIMAL, animal);
         setResult(RESULT_OK, addAnimal);
         finish();
     }

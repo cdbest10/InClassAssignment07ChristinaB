@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         displayText = (TextView) findViewById(R.id.animal_final_view);
 
         Intent animalActivity = getIntent();
-        Animal newAnimal = (Animal) animalActivity.getSerializableExtra(Keys.ANIMAL);
+        Animal animal = (Animal) animalActivity.getSerializableExtra(Keys.ANIMAL);
 
     }
 
